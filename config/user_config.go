@@ -24,9 +24,8 @@ func userCacheDir() (string, error) {
 }
 
 func (app *AppConfig) createUserConfigPath() error {
-	const filePerm = 0755
-	if _, err := os.Stat(app.userConfigPath); os.IsNotExist(err) {
-		err := os.MkdirAll(app.userConfigPath, filePerm)
+	if _, err := os.Stat(app.UserConfigPath); os.IsNotExist(err) {
+		err := os.MkdirAll(app.UserConfigPath, 0755)
 		if err != nil {
 			return err
 		}

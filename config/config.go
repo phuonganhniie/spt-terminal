@@ -9,12 +9,12 @@ import (
 	"github.com/spf13/viper"
 )
 
-const PROJECT_SUB_DIR = "stp-terminal"
+const PROJECT_SUB_DIR = "stp-terminal/"
 
 type AppConfig struct {
 	configDir      string
-	userCacheDir   string
-	userConfigPath string
+	UserCacheDir   string
+	UserConfigPath string
 	config         *Config
 	configErr      error
 	cacheErr       error
@@ -31,8 +31,8 @@ func NewAppConfig() *AppConfig {
 
 	return &AppConfig{
 		configDir:      configDir,
-		userCacheDir:   userCacheDir,
-		userConfigPath: userConfigPath,
+		UserCacheDir:   userCacheDir,
+		UserConfigPath: userConfigPath,
 		config:         config,
 		configErr:      configErr,
 		cacheErr:       cacheErr,
@@ -72,11 +72,11 @@ func (app *AppConfig) ReadConfig() {
 		panic(err)
 	}
 
-	viper.SetConfigFile("config.yaml")
-	viper.AddConfigPath(app.userConfigPath)
+	fileName := "config.yaml"
+	viper.SetConfigFile(filepath.Join(app.UserConfigPath, fileName))
 
 	if err := viper.ReadInConfig(); err != nil {
-		errMsg := fmt.Sprintf("Could not read config file - error: %s", err.Error())
+		errMsg := fmt.Sprintf("Could not read config file - error: %s\n", err.Error())
 		utils.Print("RED", errMsg)
 	} else {
 		viper.Unmarshal(app.config)
