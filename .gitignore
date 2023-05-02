@@ -1,0 +1,7 @@
+.commitlintrc.json
+.husky/*
+package.json
+package-lock.json
+node_modules
+.vscode
+install-commitlint.sh
