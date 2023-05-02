@@ -69,22 +69,30 @@ func NewAuthConfig(userConfigPath string) *AuthConfig {
 }
 
 func (ac *AuthConfig) InitClient() (*spotify.Client, error) {
+	clientID := os.Getenv("SPOTIFY_ID")
+	clientSecret := os.Getenv("SPOTIFY_SECRET")
+	if clientID == "" || clientSecret == "" {
+		err := errors.New("client_id and/or client_secret are missing. Please make sure you have set the SPOTIFY_ID and SPOTIFY_SECRET environment variables")
+		return nil, err
+	}
+
 	token := &oauth2.Token{}
+	tokenErr := errors.New("")
 
 	if utils.FileExists(ac.tokenPath) {
 		var content []byte
-		content, err := os.ReadFile(ac.tokenPath)
-		if err != nil {
-			return nil, err
+		content, tokenErr = os.ReadFile(ac.tokenPath)
+		if tokenErr != nil {
+			return nil, tokenErr
 		}
 
-		err = json.Unmarshal(content, &token)
-		if err != nil {
-			return nil, err
+		tokenErr = json.Unmarshal(content, &token)
+		if tokenErr != nil {
+			return nil, tokenErr
 		}
 	}
 
-	if token == nil {
+	if token.AccessToken == "" {
 		http.HandleFunc("/callback", ac.completeAuth)
 		http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 			log.Println("Got request for: ", r.URL.String())
