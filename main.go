@@ -21,5 +21,5 @@ func main() {
 	}
 
 	// Your application logic with the authenticated Spotify client
-	fmt.Printf("Spotify client authenticated: %v\n", spotifyClient)
+	fmt.Printf("Spotify client authenticated: %+ v\n", spotifyClient)
 }
