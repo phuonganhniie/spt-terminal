@@ -3,7 +3,6 @@
 <div class="info" align="center">
     Spotify for terminal written in Go.<br>
     with builtin <b>cover-art view</b> and <b>much more.</b> <br>
-    <!-- <a href="https://aditya-K2.github.io/gspt/"> Documentation </a> | -->
     <a href="https://github.com/aditya-K2/gspt/discussions">Discussion</a>
 </div>
 
@@ -41,7 +40,7 @@
   - [Configuration](#configuration)
       - [Config Parameters](#config-parameters)
   - [Calibrating Image Placement](#calibrating-image-placement)
-    - [Special thanks to spotify-tui](#special-thanks-to-spotify-tui)
+    - [Special thanks to spotify-tui \& aditya-K2](#special-thanks-to-spotify-tui--aditya-k2)
 
 ## Setup
 
@@ -293,4 +292,4 @@ by pressing <kbd>ctrl-s</kbd>
 
 ---
 
-### Special thanks to [spotify-tui](https://github.com/Rigellute/spotify-tui)
+### Special thanks to [spotify-tui](https://github.com/Rigellute/spotify-tui) & [aditya-K2](https://github.com/aditya-K2)
