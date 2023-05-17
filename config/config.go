@@ -15,10 +15,10 @@ type AppConfig struct {
 	configDir      string
 	UserCacheDir   string
 	UserConfigPath string
+	OnConfigChange func()
 	config         *Config
 	configErr      error
 	cacheErr       error
-	onConfigChange func()
 }
 
 var App = NewAppConfig()
@@ -87,8 +87,8 @@ func (app *AppConfig) ReadConfig() {
 	viper.OnConfigChange(func(in fsnotify.Event) {
 		viper.Unmarshal(app.config)
 		app.expandHome()
-		if app.onConfigChange != nil {
-			app.onConfigChange()
+		if app.OnConfigChange != nil {
+			app.OnConfigChange()
 		}
 	})
 	viper.WatchConfig()
