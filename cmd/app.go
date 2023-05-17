@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/aditya-K2/tview"
-	"github.com/phuonganhniie/stp-terminal/config"
-	"github.com/phuonganhniie/stp-terminal/ui"
+	"github.com/phuonganhniie/spt-terminal/config"
+	"github.com/phuonganhniie/spt-terminal/ui"
 )
 
 var (

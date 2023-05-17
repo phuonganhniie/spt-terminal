@@ -1,4 +1,4 @@
-# stp-terminal
+# spt-terminal
 
 <div class="info" align="center">
     Spotify for terminal written in Go.<br>
@@ -17,7 +17,7 @@
 ### Please Note
 
 - You will need Spotify Premium.
-- `stp-terminal` uses the [Web API](https://developer.spotify.com/documentation/web-api)
+- `spt-terminal` uses the [Web API](https://developer.spotify.com/documentation/web-api)
   from Spotify, which doesn't handle streaming itself. So you'll need either
   an official Spotify client open or a lighter weight alternative such as
   [spotifyd](https://github.com/Spotifyd/spotifyd).
@@ -25,7 +25,7 @@
 - Everything except **Image Rendering** works on Windows and Mac
 
 ## Table of Contents
-- [stp-terminal](#stp-terminal)
+- [spt-terminal](#spt-terminal)
     - [Please Note](#please-note)
   - [Table of Contents](#table-of-contents)
   - [Setup](#setup)

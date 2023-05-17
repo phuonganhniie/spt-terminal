@@ -3,12 +3,13 @@ package ui
 import (
 	"github.com/aditya-K2/tview"
 	"github.com/gdamore/tcell/v2"
-	"github.com/phuonganhniie/stp-terminal/config"
+	"github.com/phuonganhniie/spt-terminal/config"
+	"github.com/phuonganhniie/spt-terminal/entities"
 )
 
 var (
 	cfg   = config.NewConfig()
-	color = config.NewColors()
+	color = entities.NewColors()
 )
 
 var (

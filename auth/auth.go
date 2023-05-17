@@ -54,7 +54,7 @@ func NewAuthConfig(userConfigPath string) *AuthConfig {
 		_auth.WithRedirectURL(redirectURI),
 		_auth.WithScopes(scopes...),
 	)
-	state := "__STP_TERMINAL_AUTH__"
+	state := "__SPT_TERMINAL_AUTH__"
 	tokenPath := filepath.Join(userConfigPath, "oauthtoken")
 	ch := make(chan *payload)
 
@@ -142,9 +142,9 @@ func (ac *AuthConfig) completeAuth(w http.ResponseWriter, r *http.Request) {
 	if val, merr := json.Marshal(tok); merr != nil {
 		ac.ch <- &payload{nil, merr}
 	} else {
-		stptDir := filepath.Dir(ac.tokenPath)
-		if !utils.FileExists(stptDir) {
-			if derr := os.Mkdir(stptDir, 0777); derr != nil {
+		sptDir := filepath.Dir(ac.tokenPath)
+		if !utils.FileExists(sptDir) {
+			if derr := os.Mkdir(sptDir, 0777); derr != nil {
 				ac.ch <- &payload{nil, derr}
 			}
 		}

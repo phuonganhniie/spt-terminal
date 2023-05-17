@@ -6,10 +6,11 @@ import (
 
 	"github.com/aditya-K2/utils"
 	"github.com/fsnotify/fsnotify"
+	"github.com/phuonganhniie/spt-terminal/entities"
 	"github.com/spf13/viper"
 )
 
-const PROJECT_SUB_DIR = "stp-terminal/"
+const PROJECT_SUB_DIR = "spt-terminal/"
 
 type AppConfig struct {
 	configDir      string
@@ -44,22 +45,22 @@ func NewConfig() *Config {
 	return &Config{
 		CacheDir:       utils.CheckDirectoryFmt(userCacheDir),
 		RedrawInterval: 500,
-		Colors:         NewColors(),
+		Colors:         entities.NewColors(),
 		HideImage:      false,
 		RoundedCorners: false,
 	}
 }
 
 type Config struct {
-	CacheDir           string  `yaml:"cache_dir" mapstructure:"cache_dir"`
-	RedrawInterval     int     `yaml:"redraw_interval" mapstructure:"redraw_interval"`
-	Colors             *Colors `mapstructure:"colors"`
-	AdditionalPaddingX int     `yaml:"additional_padding_x" mapstructure:"additional_padding_x"`
-	AdditionalPaddingY int     `yaml:"additional_padding_y" mapstructure:"additional_padding_y"`
-	ImageWidthExtraX   int     `yaml:"image_width_extra_x" mapstructure:"image_width_extra_x"`
-	ImageWidthExtraY   int     `yaml:"image_width_extra_y" mapstructure:"image_width_extra_y"`
-	HideImage          bool    `yaml:"hide_image" mapstructure:"hide_image"`
-	RoundedCorners     bool    `yaml:"rounded_corners" mapstructure:"rounded_corners"`
+	CacheDir           string           `yaml:"cache_dir" mapstructure:"cache_dir"`
+	RedrawInterval     int              `yaml:"redraw_interval" mapstructure:"redraw_interval"`
+	Colors             *entities.Colors `mapstructure:"colors"`
+	AdditionalPaddingX int              `yaml:"additional_padding_x" mapstructure:"additional_padding_x"`
+	AdditionalPaddingY int              `yaml:"additional_padding_y" mapstructure:"additional_padding_y"`
+	ImageWidthExtraX   int              `yaml:"image_width_extra_x" mapstructure:"image_width_extra_x"`
+	ImageWidthExtraY   int              `yaml:"image_width_extra_y" mapstructure:"image_width_extra_y"`
+	HideImage          bool             `yaml:"hide_image" mapstructure:"hide_image"`
+	RoundedCorners     bool             `yaml:"rounded_corners" mapstructure:"rounded_corners"`
 }
 
 func (app *AppConfig) ReadConfig() {

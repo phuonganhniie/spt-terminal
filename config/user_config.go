@@ -8,7 +8,7 @@ import (
 // UserConfigPath returns the path to the configuration file.
 func userConfigPath() string {
 	userConfigDir, _ := userConfigDir()
-	return filepath.Join(userConfigDir, "stp-terminal")
+	return filepath.Join(userConfigDir, "spt-terminal")
 }
 
 // UserConfigDir returns the path to the configuration directory.

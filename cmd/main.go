@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/phuonganhniie/stp-terminal/auth"
-	"github.com/phuonganhniie/stp-terminal/config"
+	"github.com/phuonganhniie/spt-terminal/auth"
+	"github.com/phuonganhniie/spt-terminal/config"
 )
 
 func main() {

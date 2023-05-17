@@ -1,4 +1,4 @@
-module github.com/phuonganhniie/stp-terminal
+module github.com/phuonganhniie/spt-terminal
 
 go 1.19
 
