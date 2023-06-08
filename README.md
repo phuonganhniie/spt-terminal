@@ -3,7 +3,7 @@
 <div class="info" align="center">
     Spotify for terminal written in Go.<br>
     with builtin <b>cover-art view</b> and <b>much more.</b> <br>
-    <a href="https://github.com/aditya-K2/gspt/discussions">Discussion</a>
+    <a href="https://github.com/phuonganhniie/spt-terminal/discussions">Discussion</a>
 </div>
 
 ---
@@ -29,8 +29,6 @@
     - [Please Note](#please-note)
   - [Table of Contents](#table-of-contents)
   - [Setup](#setup)
-    - [Installing](#installing)
-          - [AUR ](#aur-)
           - [Manually](#manually)
     - [Afer Installation Steps](#afer-installation-steps)
       - [Generate an API Key from Spotify Dashboard](#generate-an-api-key-from-spotify-dashboard)
@@ -44,13 +42,13 @@
 
 ## Setup
 
-### Installing
+<!-- ### Installing
 
-###### AUR [<img src="https://img.shields.io/aur/version/gspt-git">](https://aur.archlinux.org/packages/gspt-git/)
+###### AUR [<img src="https://img.shields.io/aur/version/gspt-git">](https://aur.archlinux.org/packages/gspt-git/) -->
 
-```bash
-$ yay -S gspt-git
-```
+<!-- ```bash -->
+<!-- $ yay -S gspt-git -->
+<!-- ``` -->
 
 ###### Manually
 
@@ -65,7 +63,7 @@ $ go build -v # Building
 $ sudo install spt-terminal -t "/usr/bin/" # Linux/Mac
 
 # You can merge this into a one liner
-$ git clone https://github.com/phuonganhniie/spt-terminal && cd gspt && GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw" go build -v && sudo install gspt -t "/usr/bin/"
+$ git clone https://github.com/phuonganhniie/spt-terminal && cd spt-terminal && GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw" go build -v && sudo install spt-terminal -t "/usr/bin/"
 ```
 
 ### Afer Installation Steps
