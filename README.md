@@ -40,7 +40,7 @@
   - [Configuration](#configuration)
       - [Config Parameters](#config-parameters)
   - [Calibrating Image Placement](#calibrating-image-placement)
-    - [Special thanks to spotify-tui \& aditya-K2](#special-thanks-to-spotify-tui--aditya-k2)
+    - [Special thanks to spotify-tui for the idea \& aditya-K2 for the utils.](#special-thanks-to-spotify-tui-for-the-idea--aditya-k2-for-the-utils)
 
 ## Setup
 
@@ -55,17 +55,17 @@ $ yay -S gspt-git
 ###### Manually
 
 ```bash
-# If you have Go Path set up you can directly install gspt using
-$ go install github.com/aditya-K2/gspt
+# If you have Go Path set up you can directly install spt-terminal using
+$ go install github.com/phuonganhniie/spt-terminal
 
 # Alternately
-$ git clone https://github.com/aditya-K2/gspt.git # Cloning
-$ cd gspt
+$ git clone https://github.com/phuonganhniie/spt-terminal.git # Cloning
+$ cd spt-terminal
 $ go build -v # Building
-$ sudo install gspt -t "/usr/bin/" # Linux/Mac
+$ sudo install spt-terminal -t "/usr/bin/" # Linux/Mac
 
 # You can merge this into a one liner
-$ git clone https://github.com/aditya-K2/gspt && cd gspt && GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw" go build -v && sudo install gspt -t "/usr/bin/"
+$ git clone https://github.com/phuonganhniie/spt-terminal && cd gspt && GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw" go build -v && sudo install gspt -t "/usr/bin/"
 ```
 
 ### Afer Installation Steps
@@ -104,10 +104,10 @@ export SPOTIFY_ID= # client id
 export SPOTIFY_SECRET= # client secret
 ```
 
-2. After this you can just run `gspt`. And follow the link that it generates, and Login.
+2. After this you can just run `spt-terminal`. And follow the link that it generates, and Login.
 
 ```bash
-$ gspt
+$ spt-terminal
 ```
 ---
 
@@ -132,9 +132,9 @@ $ gspt
 ```
 NOTE: Command-line flags take priority over config values.
 
-Usage of gspt:
+Usage of spt-terminal:
   -c string
-        Specify The Directory to check for config.yml file. (default "$XDG_CONFIG_HOME/gspt")
+        Specify The Directory to check for config.yml file. (default "$XDG_CONFIG_HOME spt-terminal")
   -hide-image
         Do not display the cover art image.
   -icons
@@ -145,7 +145,7 @@ Usage of gspt:
 
 ## Configuration
 
-The configuration is done through `$XDG_CONFIG_HOME/gspt/config.yml`
+The configuration is done through `$XDG_CONFIG_HOME/spt-terminal/config.yml`
 or the path to the folder provided by the `-c` flag before starting the app.
 See [Command-line Parameters](#command-line-parameters)
 
@@ -157,7 +157,7 @@ Also, Configuration is live updated when you make a change except for some parts
 ```yml
 # Parameter followed by default values
 # For the default configuration used by gspt please see:
-# https://github.com/aditya-K2/gspt/blob/master/extras/CONFIG.md
+# https://github.com/phuonganhniie/spt-terminal/blob/master/extras/CONFIG.md
 
 # Path to where the cached images should be stored.
 cache_dir: $XDG_CACHE_HOME
@@ -200,7 +200,7 @@ colors:
         italic: true
 
 # For the default colors used for the "entities" please see:
-# https://github.com/aditya-K2/gspt/blob/master/extras/CONFIG.md
+# https://github.com/phuonganhniie/spt-terminal/blob/master/extras/CONFIG.md
 # Available color names (i.e. pink, green, etc.) can be seen here:
 # https://github.com/gdamore/tcell/blob/main/color.go#L845
 
@@ -242,7 +242,7 @@ mappings:
 # (viz. playlist_view, recently_played_view, liked_songs_view, album_view)
 
 # For the default mappings for each view please see:
-# https://github.com/aditya-K2/gspt/blob/master/extras/CONFIG.md
+# https://github.com/phuonganhniie/spt-terminal/blob/master/extras/CONFIG.md
 
 ---
 
@@ -256,7 +256,7 @@ icons:
 
 # Note: icons are used only if `use_icons` is true
 # For the default icons used and all available icon names please see:
-# https://github.com/aditya-K2/gspt/blob/master/extras/CONFIG.md
+# https://github.com/phuonganhniie/spt-terminal/blob/master/extras/CONFIG.md
 
 ```
 
@@ -287,9 +287,9 @@ by pressing <kbd>ctrl-s</kbd>
     <summary>
         Video Example
     </summary>
-    <video src="https://github.com/aditya-K2/gspt/assets/51816057/1904a0f7-c0e6-4ba3-b13e-5f09119fc71a">
+    <video src="https://github.com/spt-terminal/phuonganhniie/assets/51816057/1904a0f7-c0e6-4ba3-b13e-5f09119fc71a">
 </details>
 
 ---
 
-### Special thanks to [spotify-tui](https://github.com/Rigellute/spotify-tui) & [aditya-K2](https://github.com/aditya-K2)
+### Special thanks to [spotify-tui](https://github.com/Rigellute/spotify-tui) for the idea & [aditya-K2](https://github.com/aditya-K2) for the utils.
